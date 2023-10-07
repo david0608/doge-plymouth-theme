@@ -1,0 +1,24 @@
+bg_image = Image("doge.png");
+
+screen_ratio = Window.GetHeight() / Window.GetWidth();
+bg_image_ratio = bg_image.GetHeight() / bg_image.GetWidth();
+
+if (screen_ratio < bg_image_ratio)
+{
+  scale_factor = Window.GetHeight() / bg_image.GetHeight();
+}
+else
+{
+  scale_factor = Window.GetWidth() / bg_image.GetWidth();
+}
+
+scaled_bg_image = bg_image.Scale(
+    bg_image.GetWidth() * scale_factor,
+    bg_image.GetHeight() * scale_factor
+    );
+
+bg_sprite = Sprite(scaled_bg_image);
+
+bg_sprite.SetX(Window.GetWidth() / 2 - scaled_bg_image.GetWidth() / 2);
+bg_sprite.SetY(Window.GetHeight() / 2 - scaled_bg_image.GetHeight() / 2);
+bg_sprite.SetZ(-10000);

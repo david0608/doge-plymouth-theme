@@ -1,0 +1,7 @@
+[Plymouth Theme]
+Name=Doge
+Description=Doge
+ModuleName=script
+[script]
+ImageDir=/usr/share/plymouth/themes/doge
+ScriptFile=/usr/share/plymouth/themes/doge/doge.script
